@@ -41,16 +41,18 @@ const StatCard = ({
       </div>
 
       {/* BODY */}
-      <div className="flex flex-col sm:flex-row mb-6 items-center sm:items-start justify-around gap-4 px-5">
-        <div className="rounded-full p-4 bg-blue-50 border-sky-300 border-[1px] flex-shrink-0 flex items-center justify-center">
+      <div className="flex flex-col md:flex-row mb-6 items-stretch justify-around gap-4 px-5">
+        <div className="rounded-full p-4 bg-blue-50 border-sky-300 border-[1px] flex-shrink-0 flex items-center justify-center self-start md:self-center">
           {primaryIcon}
         </div>
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full min-w-0">
           {details.map((detail, index) => (
             <React.Fragment key={index}>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between my-2 gap-2">
-                <span className="text-gray-500">{detail.title}</span>
-                <span className="font-bold text-gray-800">{detail.amount}</span>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between my-2 gap-2 w-full">
+                <span className="text-gray-500 truncate">{detail.title}</span>
+                <span className="font-bold text-gray-800 truncate">
+                  {detail.amount}
+                </span>
                 <div className="flex items-center">
                   <detail.IconComponent
                     className={`w-4 h-4 mr-1 ${getChangeColor(
