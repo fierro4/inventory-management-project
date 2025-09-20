@@ -7,6 +7,7 @@ import Image from "next/image";
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
 
+  const randomIndex = Math.floor(Math.random() * 3) + 1;
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
       {isLoading ? (
@@ -25,13 +26,11 @@ const CardPopularProducts = () => {
               >
                 <div className="flex items-center gap-3">
                   <Image
-                    src={`https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/product${
-                      Math.floor(Math.random() * 3) + 1
-                    }.png`}
-                    alt={product.name}
-                    width={48}
-                    height={48}
-                    className="rounded-lg w-14 h-14"
+                   src={`https://ps-s3-inventorymanagement-final.s3.us-east-1.amazonaws.com/product${randomIndex}+(1).png`}
+                   alt={product.name}
+                  width={48}
+                  height={48}
+                  className="rounded-lg w-14 h-14"
                   />
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700">
