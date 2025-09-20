@@ -41,14 +41,14 @@ const StatCard = ({
       </div>
 
       {/* BODY */}
-      <div className="flex mb-6 items-center justify-around gap-4 px-5">
-        <div className="rounded-full p-5 bg-blue-50 border-sky-300 border-[1px]">
+      <div className="flex flex-col sm:flex-row mb-6 items-center sm:items-start justify-around gap-4 px-5">
+        <div className="rounded-full p-4 bg-blue-50 border-sky-300 border-[1px] flex-shrink-0 flex items-center justify-center">
           {primaryIcon}
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           {details.map((detail, index) => (
             <React.Fragment key={index}>
-              <div className="flex items-center justify-between my-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between my-2 gap-2">
                 <span className="text-gray-500">{detail.title}</span>
                 <span className="font-bold text-gray-800">{detail.amount}</span>
                 <div className="flex items-center">
@@ -57,7 +57,6 @@ const StatCard = ({
                       detail.changePercentage
                     )}`}
                   />
-
                   <span
                     className={`font-medium ${getChangeColor(
                       detail.changePercentage
